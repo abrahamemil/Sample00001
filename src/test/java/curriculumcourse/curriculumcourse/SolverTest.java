@@ -31,10 +31,11 @@ public class SolverTest {
         KieContainer kieContainer = KieServices.Factory.get().getKieClasspathContainer(SolverTest.class.getClassLoader());
         SolverFactory<CourseSchedule> solverFactory =
                 SolverFactory.createFromKieContainerXmlResource(kieContainer,
-                                                                "curriculumcourse/curriculumcourse/testSolverConfig.xml");
+                                                                "curriculumcourse\\curriculumcourse\\testSolverConfig.xml");
         Solver<CourseSchedule> solver = solverFactory.buildSolver();
 
         solver.solve(getSolution());
+        System.out.println("Solver is working.....");
     }
 
     private CourseSchedule getSolution() {
